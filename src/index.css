@@ -13,7 +13,7 @@
 }
 body {
   font-family: 'League Spartan', sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   background-color: var(--lightGrayishCyanBackground);
 }
 header {
@@ -25,25 +25,109 @@ header img {
 section {
   background-color: var(--white);
   padding: 20px;
-  max-width: 80vw;
+  max-width: 90vw;
   width: 100%;
   margin: 30px auto;
+  position: relative
 }
 section .img {
-  width: 150px;
+  width: 120px;
+  cursor: pointer;
+  margin-right: 30px;
 }
+.container {
+  display: flex;
+  align-items: center;
+}
+.sub-section div:first-child {
+  font-weight: 500;
+}
+.sub-section div:first-child span:first-child {
+  color: var(--desaturatedDarkCyan);
+  margin-right: 20px;
+}
+.bg {
+  background-color: var(--desaturatedDarkCyan);
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+.ft {
+  background-color: var(--veryDarkGrayishCyan);
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+}
+.sub-section .position {
+  font-weight: 700;
+  color: var(--veryDarkGrayishCyan);
+  text-transform: capitalize;
+  margin: 20px auto;
+}
+.sub-section div:last-child {
+  color: var(--darkGrayishCyan);
+  display: flex;
+  justify-content: space-between;
+}
+.sub-section div:last-child span {
+  margin-right: 15px;
+}
+.tags {
+  position: absolute;
+  right: 5%;
+}
+.tags .role, .tags .level {
+  background-color: var(--lightGrayishCyanBackground);
+  padding: 10px;
+  margin-right: 10px;
+  color: var(--desaturatedDarkCyan);
+}
+.languages .sub, .tls {
+  background-color: var(--lightGrayishCyanBackground);
+  padding: 10px;
+  margin-right: 10px;
+  color: var(--desaturatedDarkCyan);
+}
+
 
 
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  body {
+    font-size: 16px;
+  }
   section .img {
-    width: 120px;
+    width: 100px;
+  }
+  .bg, .ft {
+    font-size: 14px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  body {
+    font-size: 14px;
+  }
+  section {
+    max-width: 95vw;
+  }
   section .img {
-    width: 90px;
+    width: 80px;
+  }
+  .bg, .ft, .tags .role, .tags .level, .languages .sub, .tls {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .sub-section div:first-child span:first-child {
+    margin-right: 10px;
+  }
+  .sub-section div:last-child span {
+    margin-right: 10px;
   }
 }
 
