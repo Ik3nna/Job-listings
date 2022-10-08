@@ -93,6 +93,9 @@ section .img {
   margin-right: 10px;
   color: var(--desaturatedDarkCyan);
 }
+.break {
+  display: none;
+}
 
 
 
@@ -111,7 +114,7 @@ section .img {
 
 @media (min-width: 768px) and (max-width: 991px) {
   body {
-    font-size: 14px;
+    font-size: 15px;
   }
   section {
     max-width: 95vw;
@@ -132,13 +135,97 @@ section .img {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+  header {
+    margin-bottom: 100px;
+  }
+  header img {
+    height: 25vh;
+  }
+  section {
+    margin-bottom: 50px;
+    max-width: 80vw;
+    height: 235px;
+  }
   section .img {
     width: 70px;
+    position: absolute;
+    top: -20%;
+    transform: translateY(20%);
   }
+  .bg, .ft, .tags .role, .tags .level, .languages .sub, .tls {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .sub-section div:first-child span  {
+    margin-right: 20px;
+  }
+  .sub-section div:last-child span {
+    margin-right: 10px;
+  }
+  .sub-section {
+    margin-top: 30px;
+  }
+  .tags {
+    position: absolute;
+    bottom: 30px;
+    left: 3%;
+  }
+
 }
 
 @media (max-width: 575px) {
-  section .img {
-    width: 30%;
+  body {
+    font-size: 16px;
   }
+  header {
+    margin-bottom: 100px;
+  }
+  header img {
+    height: 25vh;
+  }
+  section {
+    margin-bottom: 50px;
+    max-width: 90vw;
+    height: 260px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  section .img {
+    width: 70px;
+    position: absolute;
+    top: -20%;
+    transform: translateY(20%);
+  }
+  .bg, .ft, .tags .role, .tags .level, .languages .sub, .tls {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .sub-section div:first-child span {
+    margin-right: 10px;
+  }
+  .sub-section div:last-child span {
+    margin-right: 10px;
+  }
+  .sub-section {
+    margin-top: 30px;
+  }
+  .tags {
+    position: static;
+    width: 85px;
+    margin-top: 30px;
+  }
+  .break {
+    display: block;
+  }
+  .languages, .tools {
+    position: relative;
+    top: 30px;
+  }
+  
+ 
+  
 }

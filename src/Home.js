@@ -32,7 +32,7 @@ const Home = ()=> {
 
                             <div className="tags">
                                 <span className="role">{role}</span>
-                                <span className="level">{level}</span>
+                                <span className="level">{level}</span><br className="break" />
                                 <span className="languages">
                                     {languages.map((lg,index)=>{
                                         return(
@@ -42,7 +42,7 @@ const Home = ()=> {
                                         );
                                     })}
                                 </span>
-                                <span>
+                                <span className="tools">
                                     {tools.map((tool,index)=>{
                                         return(
                                             <span key={index} className="tls">
