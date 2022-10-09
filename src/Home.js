@@ -1,9 +1,27 @@
 import React from "react";
 import data from "./data";
+import { useGlobalContext } from "./context";
 
 const Home = ()=> {
+    const { list, addTag, removeTag, clearAll } = useGlobalContext();
+
+    console.log(list)
     return(
         <main>
+            <div className={list.length === 0 ? "form-none" : "form"}>
+                {list.map((item,index)=>{
+                    return(
+                        <div className="tag" key={index}>
+                            <p>{item}</p>
+
+                            <button onClick={addTag}>
+                                <img src="/images/icon-remove.svg" />
+                            </button>
+                        </div>
+                    );
+                })}
+            </div>
+
             {data.map((item)=>{
                 const {id, company, logo, newItem, featured, position, 
                 role, level, postedAt, contract, location, languages, tools} = item;

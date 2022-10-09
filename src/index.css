@@ -16,19 +16,45 @@ body {
   font-size: 20px;
   background-color: var(--lightGrayishCyanBackground);
 }
+
+/* Header */
 header {
   background: var(--desaturatedDarkCyan);
 }
 header img {
   width: 100%;
 }
+
+/* Form */
+.form {
+  background-color: var(--white);
+  max-width: 90vw;
+  width: 100%;
+  height: 80px;
+  margin: -40px auto 50px;
+  border-radius: 10px;
+  z-index: 5;
+  position: relative;
+  color: var(--desaturatedDarkCyan);
+}
+.form-none {
+  display: none;
+}
+
+
+/* Section */
 section {
   background-color: var(--white);
   padding: 20px;
   max-width: 90vw;
   width: 100%;
   margin: 30px auto;
-  position: relative
+  position: relative;
+  border-radius: 10px;
+}
+main section:first-of-type, main section:nth-of-type(2) {
+  border-left-style: solid;
+  border-left-color: var(--desaturatedDarkCyan);
 }
 section .img {
   width: 120px;
@@ -80,6 +106,7 @@ section .img {
 .tags {
   position: absolute;
   right: 5%;
+  cursor: pointer;
 }
 .tags .role, .tags .level {
   background-color: var(--lightGrayishCyanBackground);
@@ -116,6 +143,9 @@ section .img {
   body {
     font-size: 15px;
   }
+  .form {
+    max-width: 95vw;
+  }
   section {
     max-width: 95vw;
   }
@@ -140,6 +170,10 @@ section .img {
   }
   header img {
     height: 25vh;
+  }
+  .form {
+    max-width: 80vw;
+    margin: -140px auto 70px;
   }
   section {
     margin-bottom: 50px;
@@ -179,6 +213,10 @@ section .img {
   }
   header {
     margin-bottom: 100px;
+  }
+  .form {
+    max-width: 90vw;
+    margin: -140px auto 70px;
   }
   header img {
     height: 25vh;
