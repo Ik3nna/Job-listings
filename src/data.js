@@ -12,7 +12,10 @@ const data = [
     contract: "Full Time",
     location: "USA Only",
     languages: ["HTML", "CSS", "JavaScript"],
-    tools: []
+    tools: [],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages, ...this.tools]
+    }
   },
   {
     id: 2,
@@ -27,7 +30,10 @@ const data = [
     contract: "Part Time",
     location: "Remote",
     languages: ["Python"],
-    tools: ["React"]
+    tools: ["React"],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages,  ...this.tools]
+    }
   },
   {
     id: 3,
@@ -42,7 +48,10 @@ const data = [
     contract: "Part Time",
     location: "USA Only",
     languages: ["JavaScript"],
-    tools: ["React", "Sass"]
+    tools: ["React", "Sass"],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages,  ...this.tools]
+    }
   },
   {
     id: 4,
@@ -57,7 +66,10 @@ const data = [
     contract: "Contract",
     location: "USA Only",
     languages: ["CSS", "JavaScript"],
-    tools: []
+    tools: [],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages,  ...this.tools]
+    }
   },
   {
     id: 5,
@@ -72,7 +84,10 @@ const data = [
     contract: "Full Time",
     location: "Worldwide",
     languages: ["JavaScript"],
-    tools: ["Ruby", "Sass"]
+    tools: ["Ruby", "Sass"],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages,  ...this.tools]
+    }
   },
   {
     id: 6,
@@ -87,7 +102,10 @@ const data = [
     contract: "Full Time",
     location: "UK Only",
     languages: ["Ruby"],
-    tools: ["RoR"]
+    tools: ["RoR"],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages,  ...this.tools]
+    }
   },
   {
     id: 7,
@@ -102,7 +120,10 @@ const data = [
     contract: "Full Time",
     location: "Worldwide",
     languages: ["HTML", "JavaScript"],
-    tools: ["Sass"]
+    tools: ["Sass"],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages,  ...this.tools]
+    }
   },
   {
     id: 8,
@@ -117,7 +138,10 @@ const data = [
     contract: "Full Time",
     location: "USA Only",
     languages: ["JavaScript"],
-    tools: ["Vue", "Sass"]
+    tools: ["Vue", "Sass"],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages,  ...this.tools]
+    }
   },
   {
     id: 9,
@@ -132,7 +156,10 @@ const data = [
     contract: "Full Time",
     location: "Worldwide",
     languages: ["JavaScript", "Python"],
-    tools: ["Django"]
+    tools: ["Django"],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages,  ...this.tools]
+    }
   },
   {
     id: 10,
@@ -147,7 +174,10 @@ const data = [
     contract: "Part Time",
     location: "Worldwide",
     languages: ["JavaScript"],
-    tools: ["React", "Sass"]
+    tools: ["React", "Sass"],
+    getAllTags() {
+      return [this.role, this.level, ...this.languages,  ...this.tools]
+    }
   }
 ];
 

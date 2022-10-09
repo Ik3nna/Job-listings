@@ -2,31 +2,34 @@ import React from "react";
 import data from "./data";
 import { useGlobalContext } from "./context";
 
-const Home = ()=> {
+const Home = () => {
     const { list, addTag, removeTag, clearAll } = useGlobalContext();
 
-    console.log(list)
-    return(
+    const setCardDisplay = tags => {
+        if (list.length === 0) return true
+
+        return tags.some(tag => list.includes(tag))
+    }
+
+    return (
         <main>
             <div className={list.length === 0 ? "form-none" : "form"}>
-                {list.map((item,index)=>{
-                    return(
-                        <div className="tag" key={index}>
-                            <p>{item}</p>
+                {list.map((item, index)=> (
+                    <div className="tag" key={index}>
+                        <p>{item}</p>
 
-                            <button onClick={addTag}>
-                                <img src="/images/icon-remove.svg" />
-                            </button>
-                        </div>
-                    );
-                })}
+                        <button onClick={() => removeTag(item)}>
+                            <img src="/images/icon-remove.svg" alt="" />
+                        </button>
+                    </div>
+                ))}
             </div>
 
-            {data.map((item)=>{
+            {data.map((item) => {
                 const {id, company, logo, newItem, featured, position, 
                 role, level, postedAt, contract, location, languages, tools} = item;
                 return(
-                    <section key={id}>
+                    <section key={id} style={{ display: setCardDisplay(item.getAllTags()) ? "block" : "none" }}>
                         <article className="container">
                             <img src={logo} alt={company} className="img" />
 
@@ -49,28 +52,14 @@ const Home = ()=> {
                             </div>
 
                             <div className="tags">
-                                <span className="role">{role}</span>
-                                <span className="level">{level}</span><br className="break" />
                                 <span className="languages">
-                                    {languages.map((lg,index)=>{
-                                        return(
-                                            <span key={index} className="sub">
-                                                {lg}
-                                            </span>
-                                        );
-                                    })}
-                                </span>
-                                <span className="tools">
-                                    {tools.map((tool,index)=>{
-                                        return(
-                                            <span key={index} className="tls">
-                                                {tool}
-                                            </span>
-                                        );
-                                    })}
+                                    {item.getAllTags().map((lg,index) => (
+                                        <span key={index} className="sub" onClick={addTag}>
+                                            {lg}
+                                        </span>
+                                    ))}
                                 </span>
                             </div>
-                            
                         </article>
                     </section>
                 );
