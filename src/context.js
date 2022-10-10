@@ -10,14 +10,14 @@ const initialState = {
    
 export const AppProvider = ({children})=>{
 
-    const {state,dispatch} = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     const addTag = (e)=> {
         dispatch({ type: "ADD_TAG", payload: e.currentTarget.textContent });
     }
 
-    const removeTag = (e)=> {
-        dispatch({ type: "REMOVE_TAG", payload: e.currentTarget.textContent });
+    const removeTag = (data) => {
+        dispatch({ type: "REMOVE_TAG", payload: data });
     }
 
     const clearAll = ()=> {
