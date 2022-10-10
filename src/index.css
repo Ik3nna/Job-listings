@@ -37,9 +37,38 @@ header img {
   position: relative;
   color: var(--desaturatedDarkCyan);
 }
-.form-none {
-  display: none;
+.tag {
+  background-color: var(--lightGrayishCyanBackground);
+  display: flex;
+  align-items: center;
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  padding-left: 10px;
 }
+.cancel-btn {
+  background-color: var(--desaturatedDarkCyan);
+  padding: 10px;
+  margin-left: 10px;
+}
+.cancel-btn:hover {
+  background-color: var(--veryDarkGrayishCyan);
+  cursor: pointer;
+}
+.clear-btn {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.clear-btn:hover {
+  text-decoration: underline;
+}
+
 
 
 /* Section */
@@ -108,20 +137,12 @@ section .img {
   right: 5%;
   cursor: pointer;
 }
-.tags .role, .tags .level {
+.languages .sub {
   background-color: var(--lightGrayishCyanBackground);
   padding: 10px;
   margin-right: 10px;
   color: var(--desaturatedDarkCyan);
-}
-.languages .sub, .tls {
-  background-color: var(--lightGrayishCyanBackground);
-  padding: 10px;
-  margin-right: 10px;
-  color: var(--desaturatedDarkCyan);
-}
-.break {
-  display: none;
+  border-radius: 5px;
 }
 
 
@@ -152,7 +173,7 @@ section .img {
   section .img {
     width: 80px;
   }
-  .bg, .ft, .tags .role, .tags .level, .languages .sub, .tls {
+  .bg, .ft, .languages .sub {
     font-size: 12px;
     padding: 8px;
   }
@@ -178,7 +199,13 @@ section .img {
   section {
     margin-bottom: 50px;
     max-width: 80vw;
-    height: 235px;
+    position: relative;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
   section .img {
     width: 70px;
@@ -186,7 +213,7 @@ section .img {
     top: -20%;
     transform: translateY(20%);
   }
-  .bg, .ft, .tags .role, .tags .level, .languages .sub, .tls {
+  .bg, .ft, .languages .sub {
     font-size: 14px;
     padding: 10px;
   }
@@ -200,9 +227,8 @@ section .img {
     margin-top: 30px;
   }
   .tags {
-    position: absolute;
-    bottom: 30px;
-    left: 3%;
+    position: static;
+    margin-top: 30px;
   }
 
 }
@@ -224,7 +250,6 @@ section .img {
   section {
     margin-bottom: 50px;
     max-width: 90vw;
-    height: 260px;
   }
   .container {
     display: flex;
@@ -238,32 +263,31 @@ section .img {
     top: -20%;
     transform: translateY(20%);
   }
-  .bg, .ft, .tags .role, .tags .level, .languages .sub, .tls {
+  .sub-section, .tags  {
     font-size: 14px;
-    padding: 10px;
   }
-  .sub-section div:first-child span {
-    margin-right: 10px;
+  .sub-section div:nth-child(odd) span {
+    margin-right: 7px;
+    padding: 0;
   }
-  .sub-section div:last-child span {
-    margin-right: 10px;
+  .sub-section div:nth-of-type(1) span:nth-of-type(2), .sub-section div:nth-of-type(1) span:nth-of-type(3) {
+    padding: 5px;
   }
   .sub-section {
     margin-top: 30px;
   }
+  .sub-section div:last-child {
+    font-size: 14px;
+    padding: 0;
+  }
   .tags {
     position: static;
-    width: 85px;
     margin-top: 30px;
   }
-  .break {
-    display: block;
-  }
-  .languages, .tools {
+  .sub {
     position: relative;
-    top: 30px;
+    float: left;
+    margin-top: 10px;
   }
-  
- 
   
 }

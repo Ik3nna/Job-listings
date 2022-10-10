@@ -5,29 +5,32 @@ import { useGlobalContext } from "./context";
 const Home = () => {
     const { list, addTag, removeTag, clearAll } = useGlobalContext();
 
-    const setCardDisplay = tags => {
-        if (list.length === 0) return true
-
+    const setCardDisplay = (tags) => {
+        if (list.length === 0) {
+            return true
+        }
         return tags.some(tag => list.includes(tag))
     }
 
     return (
         <main>
-            <div className={list.length === 0 ? "form-none" : "form"}>
+            <div className="form" style= {{ display: list.length === 0 ? "none": "block" }}>
                 {list.map((item, index)=> (
                     <div className="tag" key={index}>
                         <p>{item}</p>
 
-                        <button onClick={() => removeTag(item)}>
-                            <img src="/images/icon-remove.svg" alt="" />
-                        </button>
+                        <img className="cancel-btn" src="/images/icon-remove.svg" alt="remove" onClick={() => removeTag(item)} />
                     </div>
                 ))}
+
+                <p className="clear-btn" onClick={clearAll}>
+                    Clear
+                </p>
             </div>
 
             {data.map((item) => {
-                const {id, company, logo, newItem, featured, position, 
-                role, level, postedAt, contract, location, languages, tools} = item;
+                const {id, company, logo, newItem, featured, position, postedAt, contract, location} = item;
+                
                 return(
                     <section key={id} style={{ display: setCardDisplay(item.getAllTags()) ? "block" : "none" }}>
                         <article className="container">
@@ -55,7 +58,7 @@ const Home = () => {
                                 <span className="languages">
                                     {item.getAllTags().map((lg,index) => (
                                         <span key={index} className="sub" onClick={addTag}>
-                                            {lg}
+                                            {lg} 
                                         </span>
                                     ))}
                                 </span>
