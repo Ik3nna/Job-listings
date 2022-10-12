@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import data from "./data";
 import { useGlobalContext } from "./context";
 
 const Home = () => {
     const { list, addTag, removeTag, clearAll } = useGlobalContext();
+    const [filteredData, setFilteredData] = useState([]);
 
-    const setCardDisplay = (tags) => {
+    useEffect(() => {
         if (list.length === 0) {
-            return true
+            setFilteredData(data);
+        } else {
+            const filtered = data.filter(dataItem => list.every(listItem => dataItem.getAllTags().includes(listItem)))
+            setFilteredData(filtered);
         }
-        return tags.some(tag => list.includes(tag))
-    }
+    }, [list])
 
     return (
         <main>
@@ -28,11 +31,11 @@ const Home = () => {
                 </p>
             </div>
 
-            {data.map((item) => {
+            {filteredData.map((item) => {
                 const {id, company, logo, newItem, featured, position, postedAt, contract, location} = item;
                 
                 return(
-                    <section key={id} style={{ display: setCardDisplay(item.getAllTags()) ? "block" : "none" }}>
+                    <section key={id}>
                         <article className="container">
                             <img src={logo} alt={company} className="img" />
 
