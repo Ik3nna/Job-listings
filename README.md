@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/Ik3nna/Job-listings
-- Live Site URL: 
+- Live Site URL: https://job-listings-six-jet.vercel.app/
 
 ## My process
 
